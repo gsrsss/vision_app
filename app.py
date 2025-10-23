@@ -86,14 +86,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- Título y subtítulo principal ---
-st.title("Análisis de Imagen con IA 🤖🖼️")
+st.title("Análisis de Imagen con IA ദ്ദി๑>؂•̀๑)")
 st.subheader("Sube una imagen y deja que la inteligencia artificial de OpenAI la describa por ti.")
 
-# --- Contenedor principal para la API Key ---
 ke = None
 with st.container():
-    st.markdown('<div class="section-container">', unsafe_allow_html=True)
     st.markdown("### 🔑 Paso 1: Ingresa tu Clave de API de OpenAI")
     ke_input = st.text_input('Tu clave aquí (sk-...):', type="password", label_visibility="collapsed", placeholder="sk-...")
     
@@ -102,14 +99,13 @@ with st.container():
     else:
         os.environ['OPENAI_API_KEY'] = ke_input
         ke = ke_input
-        st.success("¡Clave de API cargada! 🎉")
+        st.success("¡Clave de API cargada! . ݁₊ ⊹ . ݁")
     st.markdown('</div>', unsafe_allow_html=True)
 
 # --- Contenedor para la carga de imagen (solo si hay API Key) ---
 uploaded_file = None
 if ke:
     with st.container():
-        st.markdown('<div class="section-container">', unsafe_allow_html=True)
         st.markdown("### 📸 Paso 2: Sube tu Imagen")
         uploaded_file = st.file_uploader("Elige una imagen", type=["jpg", "png", "jpeg"], label_visibility="collapsed")
 
@@ -123,7 +119,6 @@ if ke:
 additional_details = ""
 if uploaded_file and ke:
     with st.container():
-        st.markdown('<div class="section-container">', unsafe_allow_html=True)
         st.markdown("### 💬 Paso 3: Pregunta algo específico (Opcional)")
         show_details = st.toggle("¿Quieres hacer una pregunta concreta sobre la imagen?", value=False)
 
